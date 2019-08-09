@@ -21,17 +21,25 @@ source activate CenterNet
 3、编译几个角点poolling的c文件
 
 cd <CenterNet dir>/models/py_utils/_cpools/
+  
 python setup.py install --user
+  
+_cpools编译的py文件保存在编译过程的最下面。
 
 4、编译NMS的c文件
-
-cd <CenterNet dir>/data/coco/PythonAPI
+cd <CenterNet dir>/external
 make
-  
+
 5、安装coco官方包
 
+下载https://github.com/cocodataset/cocoapi 到<CenterNet dir>/data
+
 cd <CenterNet dir>/data/coco/PythonAPI
-make
+  
+将makefile中的python改成python3
+
+python3 setup.py install
+
   
 6、按照以下的方式下载和放置图片
 
